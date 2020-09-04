@@ -8,13 +8,22 @@ class BasicPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       child: Scaffold(
-        body: Column(
-          children: [
-            _headImage(),
-            _firstTitle(),
-            _bottonPad(),
-            _createText(),
-          ],
+        body: SingleChildScrollView(
+          child: Column(
+            children: [
+              _headImage(),
+              _firstTitle(),
+              _bottonPad(),
+              _createText(),
+              _createText(),
+              _createText(),
+              _createText(),
+              _createText(),
+              _createText(),
+              _createText(),
+              _createText(),
+            ],
+          ),
         ),
       ),
     );
@@ -28,38 +37,40 @@ class BasicPage extends StatelessWidget {
   }
 
   _firstTitle() {
-    return Container(
-      padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
-      child: Row(
-        children: [
-          Expanded(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  'Some picture',
-                  style: titleStyle,
-                ),
-                SizedBox(
-                  height: 10.0,
-                ),
-                Text(
-                  'Nice place',
-                  style: subTitleStyle,
-                ),
-              ],
+    return SafeArea(
+      child: Container(
+        padding: EdgeInsets.symmetric(horizontal: 30.0, vertical: 20.0),
+        child: Row(
+          children: [
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'Some picture',
+                    style: titleStyle,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Text(
+                    'Nice place',
+                    style: subTitleStyle,
+                  ),
+                ],
+              ),
             ),
-          ),
-          Icon(
-            Icons.star,
-            color: Colors.red,
-            size: 30.0,
-          ),
-          Text(
-            '41',
-            style: TextStyle(fontSize: 20.0),
-          )
-        ],
+            Icon(
+              Icons.star,
+              color: Colors.red,
+              size: 30.0,
+            ),
+            Text(
+              '41',
+              style: TextStyle(fontSize: 20.0),
+            )
+          ],
+        ),
       ),
     );
   }
